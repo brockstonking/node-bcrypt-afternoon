@@ -56,5 +56,9 @@ module.exports = {
                 }
             }
         })
+    },
+    logout: async (req, res, next) => {
+        await req.session.destroy();
+        res.sendStatus(200);
     }
 }
